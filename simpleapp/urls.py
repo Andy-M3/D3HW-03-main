@@ -1,9 +1,13 @@
-from django.urls import path
+from django.urls import path, include
 from .views import (
     NewsDetail, NewsCreate, NewsList, Search, NewsUpdate, NewsDelete
 )
+from django.contrib import admin
+
 
 urlpatterns = [
+
+    path('accounts/', include('django.contrib.auth.urls')),
     path('', NewsList.as_view(), name='news_list'),
     path('<int:pk>', NewsDetail.as_view(), name='news_detail'),
     path('create/', NewsCreate.as_view(), name='news_create'),

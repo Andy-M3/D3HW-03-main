@@ -1,6 +1,6 @@
 from django import forms
 from django.core.exceptions import ValidationError
-
+from django.contrib.auth.decorators import login_required
 from .models import News1
 
 
